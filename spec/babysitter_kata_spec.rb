@@ -10,4 +10,7 @@ RSpec.describe Babysitter do
   it '#num2 should return the value of num2' do
     expect(Babysitter.new(18,22,3).num2).to eql(22)
   end
+  it '#num3 should return the value of num3' do
+    expect(Babysitter.new(18,22,3).num3).to eql(3)
+  end
 end
