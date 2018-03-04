@@ -15,3 +15,10 @@ RSpec.describe Babysitter do
     expect(schedule1.num3).to eql(3)
   end
 end
+
+RSpec.describe Payscale do
+  let (:payscale1){Payscale.new(12,8,16)}
+  it '#add returns the sum of pay1, pay2, and pay3' do
+    expect(payscale1.add).to eql(36)
+  end
+end

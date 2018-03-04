@@ -6,3 +6,16 @@ class Babysitter
     @num3 = num3
   end
 end
+
+class Payscale
+
+  def initialize(pay1, pay2, pay3)
+    @pay1 = pay1
+    @pay2 = pay2
+    @pay3 = pay3
+  end
+
+    def add
+      @pay1 + @pay2 + @pay3
+    end
+  end
