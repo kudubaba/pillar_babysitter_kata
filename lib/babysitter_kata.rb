@@ -1,21 +1,17 @@
-class Babysitter
-  attr_accessor :num1, :num2, :num3
-  def initialize(num1, num2, num3)
-    @num1 = num1
-    @num2 = num2
-    @num3 = num3
+class Schedule
+  attr_accessor :start, :bedtime, :leave
+  def initialize(start, bedtime, leave)
+    @start = start
+    @bedtime = bedtime
+    @leave = leave
   end
 end
 
 class Payscale
-
-  def initialize(pay1, pay2, pay3)
-    @pay1 = pay1
-    @pay2 = pay2
-    @pay3 = pay3
+  attr_accessor :startrate, :bedtimerate, :latenightrate
+  def initialize(startrate, bedtimerate, latenightrate)
+    @startrate = startrate
+    @bedtimerate = bedtimerate
+    @latenightrate = latenightrate
   end
-
-    def add
-      @pay1 + @pay2 + @pay3
-    end
-  end
+end
