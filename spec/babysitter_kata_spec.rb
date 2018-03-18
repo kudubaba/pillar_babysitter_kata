@@ -1,7 +1,7 @@
 require 'babysitter_kata'
 
 RSpec.describe Schedule do
-  let (:schedule1){Schedule.new(18,22,3)}
+  let (:schedule1){Schedule.new(18,22,27)}
   it '.new creates a new instance of Schedule' do
     expect(schedule1).to be_an_instance_of Schedule
   end
@@ -12,7 +12,7 @@ RSpec.describe Schedule do
     expect(schedule1.bedtime).to eql(22)
   end
   it '#leave should return the value of leave' do
-    expect(schedule1.leave).to eql(3)
+    expect(schedule1.leave).to eql(27)
   end
 end
 
@@ -24,13 +24,19 @@ RSpec.describe Payscale do
 end
 
 RSpec.describe Calculator do
-  let (:schedule1){Schedule.new(18,22,3)}
+  let (:schedule1){Schedule.new(18,22,27)}
   let (:payscale1){Payscale.new(12,8,16)}
   let (:calculator1){Calculator.new(schedule1, payscale1)}
   it ".new creates a new instance of Calculator" do
     expect(calculator1).to be_an_instance_of Calculator
   end
-  it "#start_to_bedtime calculates amount of time to bill between start and bedtime" do
+  it "#start_to_bedtime calculates time to bill between start and bedtime" do
     expect(calculator1.start_to_bedtime).to eq(4)
+  end
+  it "#bedtime_to_midnight calculates time to bill between bedtime and midnight" do
+    expect(calculator1.bedtime_to_midnight).to eq(2)
+  end
+  it "#midnight_to_leave calculates time to bill between midnight and leave time." do
+    expect(calculator1.midnight_to_leave).to eq(3)
   end
 end

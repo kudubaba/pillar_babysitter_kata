@@ -32,4 +32,16 @@ class Calculator
       @bedtimevalue - @startvalue
     end
   end
+
+  def bedtime_to_midnight
+    if @bedtimevalue < 23
+      24 - @bedtimevalue
+    end
+  end
+
+  def midnight_to_leave
+    unless @leavevalue <= 24
+      @leavevalue - 24
+    end
+  end
 end
