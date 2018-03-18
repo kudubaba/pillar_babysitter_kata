@@ -24,22 +24,25 @@ RSpec.describe Payscale do
 end
 
 RSpec.describe Calculator do
-  let (:schedule1){Schedule.new(18,24,27)}
+  let (:schedule1){Schedule.new(18,23,27)}
   let (:payscale1){Payscale.new(12,8,16)}
   let (:calculator1){Calculator.new(schedule1, payscale1)}
   it ".new creates a new instance of Calculator" do
     expect(calculator1).to be_an_instance_of Calculator
   end
   it "#start_to_bedtime calculates time to bill between start and bedtime" do
-    expect(calculator1.start_to_bedtime).to eq(6)
+    expect(calculator1.start_to_bedtime).to eq(5)
   end
   it "#bedtime_to_midnight calculates time to bill between bedtime and midnight" do
-    expect(calculator1.bedtime_to_midnight).to eq(0)
+    expect(calculator1.bedtime_to_midnight).to eq(1)
   end
   it "#midnight_to_leave calculates time to bill between midnight and leave time." do
     expect(calculator1.midnight_to_leave).to eq(3)
   end
   it "starting_charge" do
-    expect(calculator1.starting_charge).to eq(72)
+    expect(calculator1.starting_charge).to eq(60)
+  end
+  it "bedtime_charge" do
+    expect(calculator1.bedtime_charge).to eq(8)
   end
 end

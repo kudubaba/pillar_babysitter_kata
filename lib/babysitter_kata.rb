@@ -40,11 +40,15 @@ class Calculator
   end
 
   def bedtime_to_midnight
-    if @bedtimevalue < 23
+    if @bedtimevalue <= 23
       24 - @bedtimevalue
     else
       0
     end
+  end
+
+  def bedtime_charge
+    bedtime_to_midnight * @bedtimepay
   end
 
   def midnight_to_leave
