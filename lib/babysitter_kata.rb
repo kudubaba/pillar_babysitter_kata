@@ -26,4 +26,10 @@ class Calculator
     @bedtimepay = payscale.bedtimerate
     @latenightpay = payscale.latenightrate
   end
+
+  def start_to_bedtime
+    unless @bedtimevalue >= 24
+      @bedtimevalue - @startvalue
+    end
+  end
 end

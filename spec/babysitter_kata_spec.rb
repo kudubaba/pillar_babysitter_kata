@@ -30,4 +30,7 @@ RSpec.describe Calculator do
   it ".new creates a new instance of Calculator" do
     expect(calculator1).to be_an_instance_of Calculator
   end
+  it "#start_to_bedtime calculates amount of time to bill between start and bedtime" do
+    expect(calculator1.start_to_bedtime).to eq(4)
+  end
 end
