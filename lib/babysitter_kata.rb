@@ -30,12 +30,20 @@ class Calculator
   def start_to_bedtime
     unless @bedtimevalue >= 24
       @bedtimevalue - @startvalue
+    else
+      24 - @startvalue
     end
+  end
+
+  def starting_charge
+    start_to_bedtime * @startpay
   end
 
   def bedtime_to_midnight
     if @bedtimevalue < 23
       24 - @bedtimevalue
+    else
+      0
     end
   end
 
