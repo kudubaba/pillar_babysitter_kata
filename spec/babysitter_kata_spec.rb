@@ -39,10 +39,13 @@ RSpec.describe Calculator do
   it "#midnight_to_leave calculates time to bill between midnight and leave time." do
     expect(calculator1.midnight_to_leave).to eq(3)
   end
-  it "starting_charge" do
+  it "#starting_charge multiplies #start_to_bedtime and startpay" do
     expect(calculator1.starting_charge).to eq(60)
   end
-  it "bedtime_charge" do
+  it "#bedtime_charge multiplies #bedtime_to_midnight and bedtimepay" do
     expect(calculator1.bedtime_charge).to eq(8)
+  end
+  it "#late_night_charge multiplies #midnight_to_leave and latenightpay" do
+    expect(calculator1.late_night_charge).to eq(48)
   end
 end

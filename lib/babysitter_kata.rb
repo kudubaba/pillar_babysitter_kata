@@ -56,4 +56,8 @@ class Calculator
       @leavevalue - 24
     end
   end
+
+  def late_night_charge
+    midnight_to_leave * @latenightpay
+  end
 end
