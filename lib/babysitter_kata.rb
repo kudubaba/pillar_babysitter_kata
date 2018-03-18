@@ -15,3 +15,15 @@ class Payscale
     @latenightrate = latenightrate
   end
 end
+
+class Calculator
+  attr_accessor :startvalue, :bedtimevalue, :leavevalue, :startpay, :bedtimepay, :latenightpay
+  def initialize(schedule, payscale)
+    @startvalue = schedule.start
+    @bedtimevalue = schedule.bedtime
+    @leavevalue = schedule.leave
+    @startpay = payscale.startrate
+    @bedtimepay = payscale.bedtimerate
+    @latenightpay = payscale.latenightrate
+  end
+end

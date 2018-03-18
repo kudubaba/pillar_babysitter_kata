@@ -22,3 +22,12 @@ RSpec.describe Payscale do
     expect(payscale1).to be_an_instance_of Payscale
   end
 end
+
+RSpec.describe Calculator do
+  let (:schedule1){Schedule.new(18,22,3)}
+  let (:payscale1){Payscale.new(12,8,16)}
+  let (:calculator1){Calculator.new(schedule1, payscale1)}
+  it ".new creates a new instance of Calculator" do
+    expect(calculator1).to be_an_instance_of Calculator
+  end
+end
